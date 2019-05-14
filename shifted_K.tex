@@ -1,0 +1,1100 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb,amsfonts,amsthm,amsmath}
+%\usepackage{yfonts}
+\usepackage{mathrsfs,pifont}
+\usepackage{graphicx}
+
+%\usepackage{mathtools}
+%\usepackage{yfonts}
+%\usepackage{mathrsfs,pifont}
+%\usepackage{slashed,mathabx} 
+
+
+\usepackage[all]{xy}
+
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows}
+\usepackage{hyperref}
+\usepackage[backrefs,msc-links]{amsrefs}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\Gm}{\G_m}
+\newcommand{\Q}{\mathbb{Q}}
+%\newcommand{\bP}{\mathbb{P}}
+% \newcommand{\HH}{\mathbb{H}}
+% \newcommand{\bV}{\mathsf{V}}
+% \newcommand{\bVt}{\widetilde{\mathsf{V}}}
+
+\newcommand{\bmu}{\boldsymbol{\mu}} 
+\newcommand{\bka}{\boldsymbol{\kappa}} 
+\newcommand{\bPsi}{\boldsymbol{\Psi}} 
+\newcommand{\bP}{\mathbb{P}}
+\newcommand{\bT}{\mathsf{T}}
+\newcommand{\bO}{\mathsf{O}}
+\newcommand{\bS}{\mathsf{S}}
+\newcommand{\bA}{\mathsf{A}}
+\newcommand{\bB}{\mathsf{B}}
+\newcommand{\bC}{\mathsf{C}}
+\newcommand{\cK}{\mathscr{K}}
+\newcommand{\cA}{\mathscr{A}}
+\newcommand{\cE}{\mathscr{E}}
+\newcommand{\cB}{\mathscr{B}}
+\newcommand{\cL}{\mathscr{L}}
+\newcommand{\cO}{\mathscr{O}}
+\newcommand{\cT}{\mathscr{T}}
+\newcommand{\cS}{\mathscr{S}}
+\newcommand{\cD}{\mathscr{D}}
+\newcommand{\cV}{\mathscr{V}}
+\newcommand{\cU}{\mathscr{U}}
+\newcommand{\cG}{\mathscr{G}}
+\newcommand{\cX}{\mathscr{X}}
+\newcommand{\cY}{\mathscr{Y}}
+\newcommand{\Mbar}{\overline{\mathscr{M}}}
+\newcommand{\cXh}{\widehat{\cX}}
+\newcommand{\Xh}{\widehat{X}}
+\newcommand{\cW}{\mathscr{W}}
+\newcommand{\bchi}{\boldsymbol{\chi}}
+\newcommand{\bGa}{\boldsymbol{\Gamma}}
+\newcommand{\lan}{\left\langle} 
+\newcommand{\ran}{\right\rangle} 
+\newcommand{\fw}{\mathfrak{w}}
+\newcommand{\fC}{\mathfrak{C}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bs}{\mathbf{s}}
+\newcommand{\bh}{\mathbf{h}}
+
+\newcommand{\cUfgh}{\cU_\hbar(\widehat{\fg})}
+
+%\newcommand{\fK}{\mathfrak{K}}
+\newcommand{\fK}{\overline{Z}}
+
+\newcommand{\task}[1]{\bigskip\noindent
+\boxed{\texttt{#1}}\bigskip} 
+
+
+\newcommand{\na}[1]{\nabla_{\! #1}}
+\newcommand{\thbar}{\widetilde{\hbar}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\tbM}{\widetilde{\bbM}}
+\newcommand{\bbW}{\mathbb{W}}
+
+\newcommand{\aroof}{\widehat{\mathsf{a}}}
+\newcommand{\hX}{\widehat{X}}
+\newcommand{\ve}{\varepsilon} 
+\newcommand{\bMf}{\mathsf{M}^\mathbf{f}} 
+\newcommand{\bMs}{\mathsf{M}^\mathbf{s}}
+
+\newcommand{\crit}{\textup{crit}}
+
+
+\newcommand{\Hd}{{H}^{\raisebox{0.5mm}{$\scriptscriptstyle \bullet$}}}
+\newcommand{\Hsd}{{H}_{\raisebox{0.5mm}{$\scriptscriptstyle
+      \bullet$}}}
+\newcommand{\Ld}{{\Lambda}^{\raisebox{0.5mm}{$\scriptscriptstyle \bullet$}}}
+
+\DeclareMathOperator{\Attr}{Attr}
+\DeclareMathOperator{\qAttr}{\widehat{Attr}}
+\DeclareMathOperator{\Db}{D^b}
+\DeclareMathOperator{\Coh}{Coh}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Fr}{Fr}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\wei}{weight}
+\DeclareMathOperator{\virdim}{vir\ dim}
+
+
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\Def}{Def}
+\DeclareMathOperator{\Obs}{Obs}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Lie}{Lie}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\const}{const}
+\DeclareMathOperator{\Ell}{Ell}
+\DeclareMathOperator{\Gr}{Gr}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\chr}{char}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\pt}{pt}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\Coker}{Coker}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\ord}{ord}
+
+\DeclareMathOperator{\Vx}{\mathbf{V}}
+\DeclareMathOperator{\tVx}{\widetilde{\Vx}}
+\DeclareMathOperator{\bVx}{\overline{\Vx}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bd}{\mathbf{d}}
+\newcommand{\bla}{\boldsymbol{\lambda}}
+\newcommand{\vth}{\vartheta} 
+\newcommand{\vthb}{\overline{\vartheta}} 
+
+\newcommand{\QM}{\mathsf{QM}}
+\newcommand{\Ct}{\mathbb{C}^\times}
+
+\newcommand{\Cp}{\mathsf{Cap}}
+\newcommand{\Glue}{\mathsf{Glue}}
+\newcommand{\Fusion}{\mathsf{Fusion}}
+\newcommand{\Vertex}{\mathsf{Vertex}}
+\newcommand{\tO}{\widehat{\mathscr{O}}}
+\newcommand{\vir}{\textup{vir}}
+\newcommand{\reg}{\textup{reg}}
+\newcommand{\flop}{\textup{flop}}
+
+\newcommand{\cF}{\mathscr{F}}
+\newcommand{\tX}{\widetilde{X}} 
+\newcommand{\tcF}{\widetilde{\cF}} 
+\newcommand{\rd}{/\!\!/} 
+\newcommand{\rdd}{/\!\!/\!\!/} 
+\newcommand{\bfC}{\mathbf{C}}
+\newcommand{\fh}{\mathfrak{h}} 
+\newcommand{\fg}{\mathfrak{g}} 
+\newcommand{\fgh}{\hat{\mathfrak{g}}} 
+%\newcommand{\bM}{\overline{M}}
+\newcommand{\MF}{\textsf{MF}}
+
+\newcommand{\g}{\fg}
+
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\uStab}{\underline{Stab}}
+\DeclareMathOperator{\catStab}{\underline{catStab}}
+\DeclareMathOperator{\cStab}{hStab}
+\DeclareMathOperator{\Hilb}{Hilb}
+\DeclareMathOperator{\Conv}{Conv}
+\DeclareMathOperator{\Cochar}{Cochar}
+\DeclareMathOperator{\Image}{Im}
+\DeclareMathOperator{\Crit}{Crit}
+\DeclareMathOperator{\diag}{diag}
+
+
+
+
+\newcommand{\hd}{{\displaystyle\boldsymbol{\cdot}}}
+\newcommand{\eff}{\textup{eff}}
+%\newcommand{\vir}{\textup{vir}}
+
+
+\newcommand{\cMb}{\overline{\mathscr{M}}}
+\newcommand{\cM}{\mathscr{M}}
+\newcommand{\tphi}{\widetilde{\phi}} 
+\newcommand{\tD}{\widetilde{\Delta}} 
+\newcommand{\tM}{\widetilde{\cM}} 
+\newcommand{\bbv}{\overline{\bv}} 
+\newcommand{\bbw}{\overline{\bw}} 
+
+\newcommand{\Xt}{X^{\sim}} 
+
+
+
+\newtheorem{Proposition}{Proposition} 
+\newtheorem{Lemma}{Lemma} 
+\newtheorem{Corollary}{Corollary} 
+\newtheorem{Theorem}{Theorem} 
+
+
+\newcounter{mypoint}
+
+\newcommand{\pnt}{\stepcounter{mypoint} \textbf{\arabic{mypoint}.} }
+
+
+\newcommand{\question}{\marginpar{\quad \huge $\overset{\textup{?}}\leftarrow$}}
+
+
+\begin{document}
+
+
+
+\noindent
+{\large \textsf{Action
+    of shifted quantum loop groups on critical K-theory}} 
+\medskip 
+\hrule
+
+\bigskip
+
+\section{Overview}
+
+\subsection{}
+
+
+Let $X$ be a Nakajima quiver variety. The main goal of this project is to
+construct and study a certain
+action of a shifted quantum loop group on the
+critical K-theory of the moduli spaces of stable quasimaps:
+%
+\begin{equation}
+f: \bbA^1 \dasharrow X \,. \label{qmf}
+\end{equation}
+%
+
+\subsection{}
+
+Like ordinary quantum loop groups $\cUfgh$, the 
+shifted quantum loop groups will be defined through matrix elements of
+$R$-matrices with a spectral parameter. These $R$-matrices will
+satisfy all relations of the ordinary quantum loop group and, in
+particular, the Yang-Baxter equation. The only
+difference will be in the behaviour of $R(u)$ as $u\to 0,\infty$.
+
+Instead of the condition that $R(0)$ and $R(\infty)$ are finite and
+invertible, we require that the image of
+$$
+R_{V_1,V_2}(u) \mapsto \End(V_1 \otimes V_2,\Bbbk[u^{\mp 1},u^{\pm 1}]])
+$$
+belong to certain strata that depend on the grading
+by the weights of the Cartan subalgebra
+$\fh \subset \fg$. The Cartan subalgebra $\fh$ acts on $V_i$ by
+operators that record the ranks of the universal bundles, that is,
+the dimension vectors for quiver varieties.
+
+Singularities of $R$-matrices naturally appear in limit constructions
+like infinite tensor products. The critical K-theory of quasimaps
+moduli spaces will be related to such infinite tensor product
+construction in what follows.
+
+\subsection{}  
+
+Let  $\cM$ be a smooth variety with a function 
+%
+\begin{equation}
+\phi: \cM \to \bbA^1 \,.\label{W}
+\end{equation}
+%
+We may assume that $0$ is the only critical value of $\phi$, that is,
+that
+$$
+\Crit(\phi) = \{ d\phi =0\} \subset \phi^{-1}(0) \,. 
+$$
+By definition, 
+$$
+K_\crit(\phi) = \Coker \left(
+K^\circ( \phi^{-1}(0)) \to K( \phi^{-1}(0)) \right)  
+$$
+is the cokernel of the natural map from the K-theory of locally free
+sheaves to the K-theory of all coherent sheaves on the singular
+fiber.
+
+If $\phi$ is equivariant for an action of a group $G$ then an
+equivariant version of $K_{\crit,G}(\phi)$ may be studied. This will be
+very important to us and, in particular, we will make use of an action
+that scales the target in \eqref{W} nontrivially. Perhaps it is a good
+ideal to assume by default maximal possible equivariance in what
+follows,
+to save on
+subscripts. \question 
+
+As will be reviewed below, moduli spaces of stable quasimaps as in
+\eqref{qmf} may be
+presented as global critical loci. Thus the issue of gluing local data
+does not arise in the construction of their critical K-theory.
+
+\section{Equivariant critical K-theory}
+
+\subsection{}
+
+The inclusion
+%
+\begin{equation}
+  \label{iota}
+  \iota: \phi^{-1}(0) \to \cM 
+\end{equation}
+%
+is a proper map to a smooth variety, and hence the pullback $\iota^*$
+and the pushforward $\iota_*$ between the K-groups are well-defined.
+
+We further assume that $\phi$ is equivariant for the action of a torus
+$\bT$, which scales the target in \eqref{W} by a nontrivial character $w\in
+\bT^\wedge$.  We denote by $\bT'\subset \bT$ the kernel of $w$. In general, this
+may be a disconnected subgroup, but I don't know if we need this level
+of generality. I believe that for the application we have in mind
+$\bT'$ will be just a subtorus. \question
+
+Also, I think we need to assume some equivariant formality about
+$\cM$ \question 
+
+
+
+\subsection{}
+
+By localization, we have
+%
+\begin{equation}
+  \iota_* \, \iota^* = (1- w^{-1}) \cdot \Id \label{loc1} \,. 
+\end{equation}
+%
+In particular,
+%
+\begin{equation}
+  \label{cokerii}
+  \Coker \iota_* \, \iota^*  = K_{\bT'}(\cM) \,. 
+\end{equation}
+
+\subsection{}
+
+We have
+$$
+\cM \setminus \phi^{-1}(0) \cong \left(\bT/\bT'\right) \times \phi^{-1}(1)
+$$
+and this identifies $\bT$-equivariant K-groups of $\cM \setminus
+\phi^{-1}(0)$ with the $\bT'$-equivariant K-groups of $\phi^{-1}(1)$, pushed
+forward under the inclusion $\bT'\to \bT$.
+
+In particular, the long exact sequence of a pair becomes 
+$$
+\to K^1_{\bT'}(\phi^{-1}(1)) \to  K_\bT(\phi^{-1}(0))  \xrightarrow{\,\,\iota_*\,\,} K_\bT(\cM)
+\to K_{\bT'}(\phi^{-1}(1)) \to 0 \,. 
+$$
+I believe $\phi^{-1}(1)$ is a variety of the same kind we always get, in
+particular has no odd cohomology. So I think we have \question 
+%
+\begin{equation}
+K^1_{\bT'}(\phi^{-1}(1)) = 0 \label{K1vanish}
+\end{equation}
+%
+and hence an injection
+%
+\begin{equation}
+  \label{injK1}
+ 0 \to  K_\bT(\phi^{-1}(0))  \xrightarrow{\,\,\iota_*\,\,} K_\bT(\cM) \,. 
+\end{equation}
+
+\subsection{}
+On the other hand, every locally free sheaf on a subscheme comes from
+one on the ambient space, hence dual surjection 
+%
+\begin{equation}
+  \label{surjK}
+\iota^*:  K(\cM) \to K^\circ( \phi^{-1}(0)) \to 0 \,. 
+\end{equation} 
+%
+
+\subsection{}
+Putting \eqref{cokerii}, \eqref{injK1}, and \eqref{surjK} together, we
+obtain the following
+
+\begin{Proposition}
+  There is a natural injection
+  %
+\begin{equation}
+ K_{\crit,\bT}(\phi) \hookrightarrow K_{\bT'}(\cM)\label{injKcrit} \,,
+\end{equation}
+%
+in which the target is pushed forward with respect to $T'\hookrightarrow T$ and,
+in particular, is a torsion $K_{\bT}(\pt)$-module. 
+\end{Proposition}
+
+It may be possible to imagine an abstract situation when the vanishing
+\eqref{K1vanish} does not hold and so the injectivity of
+\eqref{injKcrit} fails. I imagine this won't happen in situations of
+interest to us, as this would give a nonzero canonical submodule of
+$K_\crit$. 
+
+\subsection{Perturbation/Degeneration}\label{s_pert} 
+Now consider a potential $\tphi$ which is not $\bT$-equivariant 
+and so has a nontrivial decomposition 
+%
+\begin{equation}
+\tphi=\sum \tphi_i \label{tW}
+\end{equation}
+%
+where the terms $\tphi_i$ have distinct $\bT$-weights $w_i$. Consider
+the Newton polytope 
+$$
+\tD= \Conv(\{w_i\}) \in \bT^\wedge \otimes \R 
+$$
+of the function $\tphi$ and assume that it is contained in a hyperplane
+of the form 
+%
+\begin{equation}
+  \tD \subset \{x \, |\, \langle x, \eta \rangle = 1 \}\,, \quad
+  \eta \in \Cochar(\bT) \otimes \Q \,. 
+\end{equation}
+%
+Let $\bS\subset \bT$ be the torus with
+$$
+\Lie \bS = \R \eta + \bigcap \Ker dw_i \,. 
+$$
+By construction, the function $\tphi$ is $\bS$-equivariant with a
+nontrivial weight. We denote by $\bS'\subset \bS$ the kernel of this
+weight.
+
+Let $\Delta\subset \tD$ be a face of some dimension and let
+$$
+\phi = \sum_{w_i \in \Delta} \tphi_i
+$$
+be the sum of corresponding terms in \eqref{tW}. 
+
+\begin{Proposition}
+  With the assumptions as above, there is a natural inclusion
+  %
+  \begin{equation}
+    \label{pertW}
+    K_{\crit,\bS}(\tphi) \subset K_{\crit,\bS}(\phi) \subset
+    K_{\bS'}(\cM) \,. 
+  \end{equation}
+\end{Proposition}
+
+\begin{proof}
+  Let
+  $$
+  \tilde \iota: \tphi^{-1}(0) \to \cM
+  $$
+  be the inclusion. Since $\Delta$ is a facet of $\tD$,
+  we can use the action of $\bT$ to contract $\tphi^{-1}(0)$ to
+  $\phi^{-1}(0)$ in an $\bS$-equivariant way. Thus 
+  $$
+  \Image \tilde \iota_* \subset
+  \Image \iota_* \subset K_{\bS}(\cM) \,.
+  $$
+ This implies the proposition. 
+\end{proof}
+
+\section{Examples of critical loci}
+
+\subsection{Algebraic symplectic reductions}
+
+\subsubsection{}\label{s_Mg}
+
+Let $M$ be a symplectic representation of a group $G$ or a more
+general smooth algebraic symplectic varieties on which a connected
+reductive group $G$ acts in
+a Hamiltonian way. Let
+$$
+\mu: M \to \fg^*\,, \quad \fg = \Lie G
+$$
+be the moment map. Consider a GIT quotient of the form
+$$
+\cM = \left(M \times \fg \right) \rd G  \,,
+$$
+about which we assume that it has no strictly semistable points.
+
+\subsubsection{}
+
+There is a natural function on $\cM$, namely 
+%
+\begin{equation}
+\phi=\langle \mu(v), \xi \rangle \,, \quad (v,\xi) \in V \times \fg
+\,.\label{phi_mu}
+\end{equation}
+%
+We can take $\bT$ to be a maximal torus in the group 
+$$
+\bT \subset \Aut\left(M,\Bbbk \omega_M\right)^G \times \G_m
+$$
+of automorphisms of $\cM$ that act by transformations scaling the
+the symplectic form on $M$ and dilations of the $\fg$-factor. The
+function $\phi$ is invariant under a subtorus $\bT'\subset \bT$ that
+scales the $\fg$-factor by
+$$
+\hbar = \textup{the weight of $\omega_M$} \, .
+$$
+
+\subsubsection{} 
+
+Let $X$ be the critical locus of $\phi$. We have 
+%
+\begin{align}
+  X = \Crit(\phi) &=
+                    \{(v,\xi) \, |\,  \mu(v)=0, \xi\cdot v =0 \} \rd G\notag \\
+ &= \mu^{-1}(0) \rd G \times \{0\} \label{xizero}
+\end{align}
+%
+where the first line follows from the definition of the moment map,
+and conclusion $\xi=0$ in the second line is forced by stability.
+
+\subsubsection{} 
+
+
+Since $\phi$ is linear in $\xi$ we have by the results of
+\cite{}
+$$
+K_{\crit,\bT}(\phi) = K_{\bT'}(X) \,,
+$$
+thus equivariant K-theories of algebraic symplectic reductions are
+examples of critical K-theories. 
+
+
+\subsection{Jets of quasimaps to quiver varieties}
+\label{sJets} 
+
+\subsubsection{}
+
+Now let $X$ be a Nakajima quiver variety which, by definition, means that
+$X$ is an algebraic symplectic reduction of
+$$
+M = \bigoplus_{\textup{vertices $i$}} T^*\Hom(W_i,V_i)  \oplus
+\bigoplus_{\textup{edges $i\to j$}} T^*\Hom(V_i,V_j)\,,
+$$
+by the group
+%
+\begin{equation}
+G = \prod GL(V_i) \,.\label{GGV}
+\end{equation}
+%
+Let $\Ct_\hbar$  scale the 
+cotangent directions with weight $\hbar^{-1}$. 
+The group 
+$$
+G_F = GL(W) \times \Ct_\hbar \times \dots\,, 
+$$
+where  $GL(W) = \prod GL(W_i)$, acts by 
+ $G$-automorphisms of $M$ scaling the
+symplectic form. 
+
+\subsubsection{}
+
+
+Now assume that the framing
+space
+$
+W = \bigoplus_i W_i
+$
+has the form
+%
+\begin{equation}
+W = \overline{W} \otimes \C^L \,,  \label{WbW}
+\end{equation}
+%
+for some $L=2,3,\dots$. We restrict equivariance to the subgroup
+%
+\begin{equation}
+  G_F \supset \overline{G}_F = GL(\overline{W}) \times \Ct_\hbar \times
+  \dots \label{Gbar}
+\end{equation}
+%
+in which $\Ct_\hbar$ also acts on $\C^L$ by
+$$
+\diag(1,\hbar,\hbar^2, \dots,\hbar^{L-1}) \in GL(\C^L) \,. 
+$$
+In particular, the operator
+%
+\begin{equation}
+  \label{Xi}
+  \Xi =
+  \begin{pmatrix}
+    0 \\
+    1 &0  \\
+    & 1 & 0 \\
+    & & \ddots & \ddots 
+  \end{pmatrix} \in \End(\C^L) \subset \End(W) 
+\end{equation}
+%
+transforms with weight $\hbar$ under $\overline{G}_F$. 
+
+
+In terms of the representation of quantum loop algebras, restriction to
+$\overline{G}_F$ means
+that all evaluation parameters split into $L$-tuples forming geometric
+progressions with denominator $\hbar$.
+
+
+
+\subsubsection{}
+
+The function \eqref{phi_mu}  is linear in $\xi$ and has the form 
+$$
+\phi(A,B,\xi, \dots ) = \tr A \, B\, \xi + \dots
+$$
+where
+$$
+A \in \Hom(W,V) \,, \quad B\in \Hom(W,V)^* \cong \Hom(V,W) \,. 
+$$
+Define
+$$
+\tphi = \phi - \tr A \, \Xi \, B \,. 
+$$
+Since the addition is constant in $\xi$, this perturbation satisfies
+the hypotheses of Section \ref{s_pert}.
+
+\subsubsection{}\label{s_relW} 
+
+
+
+The critical locus of $\tphi$ is the following. We have
+$$
+\frac{\partial}{\partial \xi} \, \tphi = \mu\,, \quad
+\frac{\partial}{\partial A} \, \tphi  = B \xi - \Xi B \,, \quad
+\frac{\partial}{\partial B} \, \tphi  = \xi A -  A \Xi \,, 
+$$
+while the partials with respect to coordinates in $\Hom(V_i,V_j)$ imply
+that $\xi$ commutes with all these maps.
+
+We can make $V$ and $W$ modules over $\C[x]$ by making $x$ act by
+$\xi$ and $\Xi$ respectively. Then $\Crit(\tphi)$ is the locus where
+the quiver maps are maps of $\C[x]$-modules, satisfying the moment map
+equation. We note that
+$$
+W = \overline{W} \otimes \C[x]/x^L
+$$
+is a vector bundle on the $L$th infinitesimal neighborhood of $0 \in
+\bbA^1$.
+
+\subsubsection{}
+
+To take the quotient by the group \eqref{GGV}, we need to impose a
+certain stability condition. The most natural approach is to use the same stability condition as
+in the construction of quiver varieties, that is, to use the GIT stability
+corresponding to a character of $\prod GL(V_i)$.
+
+If we do this,  the action of a quantum loop algebra on the
+corresponding critical K-theories for finite $L$ should become
+KR modules.
+
+If, for large $L$, we want $V$ to similarly be an approximation to a
+vector bundle on $\bbA^1$, then most likely we need to be more
+selective about choosing the right stability condition. There is a
+beginning of the discussion in Section \ref{s_limit} below. 
+\question
+
+
+
+
+
+
+\subsubsection{(outdated, I think)} 
+
+{\footnotesize 
+Suppose we want to study quasimaps to quiver variety
+with a given dimension vector $\bbv$. 
+I think the right stability condition might be something of the
+following kind. It is convenient to think of the decomposition
+\eqref{WbW} as follows in the style of Crawley-Boevey. Introduce
+a new vertex $\infty$ with
+$$
+V_\infty = \C^L
+$$
+and the operator $\Xi$ acting in $V_\infty$. Further, connect
+each vertex $i$ with $\infty$ by $\dim \overline{W}_i$ many edges.
+Given a sufficiently generic stability condition
+$$
+\theta = (\theta_1,\theta_2, \dots)
+$$
+for the original quiver, extend it by setting 
+$$
+\theta_\infty = - \theta \cdot \bbv\,. 
+$$
+Let
+$$
+V' \subset \bigoplus_{i \in \textup{vertices} \cup \{\infty\}} V_i
+$$
+be a subspace invariant under the path algebra of the extended quiver
+and the operators $\xi$ and $\Xi$. I imagine thÁt a good condition to
+impose on it is that 
+$$
+(\theta, \theta_\infty) \cdot (\dim V', \dim V'_\infty) \ge 0 
+$$
+for any such submodule.
+}
+
+% On the critical locus, when $(\xi,\Xi)$ commute with the quiver maps,
+% this implies that the kernel of these operators is a stable
+% representation of dimension $(\bv, 1)$, which is as close as we can
+% get to $V$ being a torsion-free $\xi$-module. 
+
+
+
+
+\section{Stable envelopes in critical K-theory}
+\label{s_Stable}
+
+\subsection{}
+
+For any $\cM$ as in Section \ref{s_Mg}, categorical stable envelopes may be
+constructed
+as Fourier-Mukai functors
+%
+\begin{equation}
+\Stab: \Db \Coh \cM^\bA  \to \Db \Coh \cM\,, \label{Stab1}
+\end{equation}
+%
+for any torus 
+$$
+\bA \subset \Aut(M,\omega_M)^G
+$$
+and a choice of slope and attracting directions for $\bA$. These can be
+shown be, in fact, sheaves, in some generality. Here we probably need only their K-theory
+classes, that is, K-theoretic stable envelopes.
+
+\subsection{}
+
+Let $\phi$ be an $\bA$-invariant function on $\cM$. Consider the
+attracting manifold 
+$$
+\Attr \subset \cM^\bA \times \cM 
+$$
+and let $p_1$ and $p_2$ be the two from the product. By construction
+$$
+\Attr \subset \big\{p_1^* \phi\big|_{\cM^\bA} - p_2^* \,
+\phi = 0 \big\} \,. 
+$$
+We claim the same is true of the support of \eqref{Stab1}.
+
+\subsection{}
+
+
+
+We have $\supp \Stab \subset \Attr^f$, where $\Attr^f$ is the full attracting set, that is, the smallest
+subscheme, closed under the operation of taking the attracting
+manifold of $\bA$-fixed points. Let $R=\Gamma(\cO_\cM)$ denote
+the algebra of global functions on $\cM$. 
+We have the following diagram
+%
+\begin{equation}
+  \xymatrix{
+    \Attr^f  \ar[r] \ar[d] & \cM^\bA \times \cM \ar[d] \\
+    \Attr_0  \ar[r]  & \cM_0^\bA \times \cM_0 
+}\,,  \label{AttAtt}
+\end{equation}
+%
+where
+%
+\begin{align}
+ \cM_0&= \Spec R = \textup{the affinization of $\cM$} \\
+  \Attr_0&= \Spec R/ \left(R_{>0}\right) \\ 
+ \cM_0^\bA &= \Spec \left(R/ \left(R_{>0}\right) \right)^\bA  \,. 
+\end{align}
+%
+Here $R_{>0}$ denote the subalgebra of functions of positive weight
+with respect to a chosen cocharacter of $\bA$.
+
+Since $\phi$ is pulled
+back from the affinization, 
+$$
+\Attr^f \subset \big\{p_1^* \phi\big|_{\cM^\bA} - p_2^* \,
+\phi = 0 \big\} \,. 
+$$
+Therefore, $\Stab$ induces a functor between the categories
+of singularities, or the categories of matrix factorizations 
+%
+\begin{equation}
+  \Stab: \MF(\phi\big|_{\cM^\bA} )  \to
+  \MF(\phi) \,, \label{Stab2}
+\end{equation}
+%
+and the corresponding Grothedieck groups, that is, critical
+$K$-theories.
+
+\subsection{}
+Let $X$ be a Nakajima quiver variety and consider tori  of the form 
+$$
+\bA= \{ (a_1, a_2, \dots)\}, \quad a_i \in \Ct \,,
+$$
+acting on the framing spaces so that
+%
+\begin{equation}
+W = a_1 W^{(1)} \oplus a_2 W^{(2)} \oplus \dots \,. \label{aWp}
+\end{equation}
+%
+The fixed loci of such action are product of Nakajima quiver varieties
+with the same quiver and framing $W^{(i)}$. 
+
+
+Recall that equivariant K-theories of Nakajima quiver varieties are
+made into a certain category of modules over a quantum loop group by
+requiring that the stable envelopes (for fixed slope, and arbitrary
+choice of attracting directions) are morphisms in this category for
+all $\bA$ as above.
+
+This morphisms are special cases of the maps \eqref{Stab2} for
+the potential $\phi$ as in \eqref{phi_mu}.
+
+\subsection{}
+Perturbations $\tphi$ as in Section \ref{sJets} are
+compatible with fixed points and
+stable envelopes as long the operators like $\Xi$ are
+$\bA$-invariant, that is, preserve the
+direct sum decomposition in \eqref{aWp}.
+
+Further, if $\prod X^{(i)}$ is a component of $X^\bA$ then
+$$
+\tphi\big|_{\prod X^{(i)}} = \sum \tphi_i
+  $$
+where each $\tphi_i$ is a function of the same form pulled back from
+the corresponding factor. As a result
+$$
+K_\crit\left( \tphi\big|_{\prod X^{(i)}}  \right) = \bigotimes
+K_\crit\left( \tphi_i\right)
+$$
+And this enlarges the previously constructed category of
+modules by modules of the form $K_\crit\left( \tphi\right)$.
+By the perturbation argument, these are submodules in
+$K_\crit\left( \phi\right) \cong K(X)$
+
+\section{Large $L$ limit}\label{s_limit} 
+
+\subsection{The case $\dim V$ stays finite}
+
+\subsubsection{}
+
+Clearly, $\Xi^L=0$. Let
+%
+\begin{equation}
+  V = V_{=0}\oplus V_{\ne 0} \,, \quad
+  W= W_{=0} \oplus W_{\ne 0} \label{V0Vn}
+\end{equation}
+%
+be the decomposition according to zero/nonzero eigenvalues of
+the operators $(\xi,\Xi)$. The relations of Section \ref{s_relW}
+show that this is a direct sum of quiver representations with
+$W_{\ne 0}=0$. By stability, $V_{\ne 0}=0$, that is, $\xi$ is
+nilpotent. Therefore
+$$
+\xi^{\dim V_i}\big|_{V_i} = 0
+$$
+meaning that $\xi^k = 0 $ for some fixed $k$ that does not grow with
+$L$.
+
+\subsubsection{}
+
+This means that
+$$
+\Image B \subset \Ker \Xi^k \subset
+\Image \Xi^k \subset \Ker A \,, 
+$$
+for all $L\ge 2k$. It follows that $AB=0$ and therefore both $A$
+and $B$ cancel out of the moment map equations.
+
+Some of them are still
+needed to insure stability, the rest becomes a vector bundle over a
+simpler moduli space.
+
+\subsubsection{}
+
+For instance, suppose the stability condition is such that the quiver
+maps and $\xi$ generate the spaces $V$ from the image of $A$.
+Clearly, it is enough to take
+$$
+\overline{A}: \overline{W} \to V
+$$
+where $\overline{W} \subset W$ is embedded as the trivial
+weight space of $\hbar$. Similarly, $B$ is uniquely determined by the composition
+$$
+\overline{B}: V \xrightarrow{\, B\, } W \to \overline{W} \otimes
+h^{L-1} 
+$$
+where the projection is to the corresponding $\hbar$-eigenspace.
+
+While $\overline{A}$ plays a role in stability, the datum of
+$\overline{B}$ is completely arbitrary and forms a vector
+bundle over the moduli space of singly-framed representations.
+
+For
+instance, if the original quiver variety was $\Hilb(\C^2)$, we will
+get the total space of a tautological bundle over $\Hilb(\C^3)$, where
+$\xi$ acts as the multiplication by the new coordinate.
+
+
+\subsection{When $V$ grows with $L$: singularities in the $R$-matrix}
+
+\subsubsection{}
+
+In the notation of Section
+\ref{sJets}, we fix the dimension vector
+$$
+\bbw= \dim \overline{W}\,, 
+$$
+and consider the direct sum of the corresponding
+critical K-theories 
+$$
+\bbM = \bigoplus_{\bv} K_\crit(\tphi)_{\bv,\bw}\,, \quad
+\bw = L\bbw\,, 
+$$
+over all possible dimension vectors $\bv$.
+
+By the results of Section \ref{s_Stable}, this is a module over a
+certain quantum loop group. Concretely, its structure may be
+described by $R$ matrices $R_{\bbM',\bbM}(u)$ with
+spectral parameter $u$, where
+$$
+\bbM' = \bigoplus_{\bv'} K_\bT(X_{\bv',\bw'})\,, 
+$$
+and $X_{\bv',\bw'}$ denotes the Nakajima quiver variety with
+dimension vectors $\bv'$ and $\bw'$.
+
+For fixed $L$ these $R$ matrices are rational functions of $u\in \Ct$ (and
+all other parameters in the theory) such that
+$R(0)$ and $R(\infty)$ are finite and invertible.
+We will see how singularities at
+$u=0,\infty$ appear in the $L\to \infty$ limit.
+
+\subsubsection{}
+The singularities of the $R$-matrix are best described in terms of its
+Gauss decomposition given by the stable envelopes, see
+\cite{} for an introduction. In fact, the
+singularities appear precisely in the diagonal part of the Gauss
+decomposition.
+
+\subsubsection{} 
+
+Let $F$ be a component of the fixed locus $X^\bA$ for an action of a
+torus $\bA \subset \Aut(X,\omega_X)$. The normal bundle to
+$F$ splits into the attracting and repelling directions 
+$$
+N_{X/F} = N_{>0} \oplus N_{<0}
+$$
+for a choice of a generic cocharacter of $\bA$. By construction
+of the stable envelopes, the diagonal part of the Gauss decomposition
+of the corresponding $R$-matrix is given by
+$$
+D_F = \aroof\left(N_{<0} -\hbar^{-1}\, N_{<0} \right) \,. 
+$$
+Here $\aroof$  is the multiplicative genus defined by
+$$
+\aroof (\cL) = \cL^{1/2} - \cL^{-1/2}
+$$
+for a line bundle $\cL$.
+
+\subsubsection{} \label{s_LL} 
+
+Now suppose that
+$$
+N_{<0}  = \overline{N_{<0}} \otimes (1+\hbar+\dots+\hbar^{L-1}) +
+\delta N_{<0} \,,
+$$
+where the second term is fixed in the $L\to \infty$ limit. Set
+$$
+D'_F = \aroof\left(-\hbar^{-1}\overline{N_{<0}} +(1-\hbar) \delta
+  N_{<0} \right) \,.
+$$
+By telescoping, we get the following
+
+\begin{Lemma}
+  \begin{equation}
+    \label{limD_F}
+    \frac{D_F}{D'_F} \sim
+    \begin{cases}
+      \left(\det \hbar^{L-1} \overline{N_{<0}} \right)^{1/2} \,, &
+      \hbar^{L} \to \infty\,, 
+      \\
+      (-1)^{\rk \overline{N_{<0}}} \left(
+        \det \hbar^{L-1} \overline{N_{<0}} \right)^{-1/2} \,, &
+      \hbar^{L} \to 0\,. 
+    \end{cases}
+  \end{equation}
+%
+\end{Lemma}
+
+\subsubsection{}
+
+Concretely, in our situation, $F$ is contained in the locus of
+direct sums $Q'\oplus Q$
+of quiver representations with
+$$
+\dim Q' = (\bw',\bv')\,, \quad \dim Q = (\bw,\bv) \,. 
+$$
+The direct sums are fixed under the action of the torus
+$$
+\bA \cong \Ct \owns u
+$$
+that scales the $W'$ framing spaces with weight $u$. If we declare the
+weight $u$ to he attracting, then
+$$
+N_{<0} = u^{-1} \Ext^1(Q',Q) \,.
+$$
+In particular,
+%
+\begin{equation}
+  \label{rkN<}
+  \rk N_{<0} = \bB((\bv',\bw'), (\bv,\bw)) 
+\end{equation}
+%
+where
+%
+\begin{equation}
+  \label{Bvv}
+  \bB((\bv',\bw'), (\bv,\bw))  = \bv' \cdot \bw + \bw' \cdot \bv -
+  \bv' \cdot \bC \bv\,. 
+\end{equation}
+%
+Here $\bC$ is the Cartan matrix of the quiver.
+
+
+\subsubsection{}
+
+We consider the case when the dimension of $Q'$ is fixed, while the
+dimension of $Q$ grows with $L$ so that
+$$
+\bw = L \, \bbw \,, \quad \bv = L \, \bbv + O(1) \,. 
+$$
+With the correct stability condition, we have 
+$$
+[Q] = (1+\hbar+\dots + \hbar^{L-1}) [\overline{Q}] +
+[\delta Q]
+$$
+in the K-theory of quiver representations, where $[\delta Q]$ is
+bounded K-theory class. This puts us in the situation of Section
+\ref{s_LL} with
+$$
+\overline{N_{<0}} = u^{-1} \Ext^1(Q', \overline{Q}) \,, 
+$$
+and gives the following
+
+\begin{Proposition}
+  Let the weight $u$ be attractive and let
+  $$
+  \overline{D}_{Q'\oplus
+    Q} = \lim_{L\to \infty}  h^{\dots} D_{Q'\oplus
+    Q}
+  $$
+  denote the leading term in the $L\to \infty$ asymptotics
+  of the diagonal diagonal part in the Gauss decomposition of the
+  $R$-matrix. If $\hbar^{L}\to \infty$ then
+  %
+  \begin{equation}
+    \label{eq:3}
+    \ord_{u=0} \overline{D}_{Q'\oplus
+    Q} = 0 \,, \quad \ord_{u=\infty} \overline{D}_{Q'\oplus
+    Q} = \bB((\bv',\bw'), (\bbv,\bbw)) \,. 
+\end{equation}
+ If $\hbar^{L}\to 0$ then
+  %
+  \begin{equation}
+    \label{eq:3}
+    \ord_{u=0} \overline{D}_{Q'\oplus
+    Q} =  \bB((\bv',\bw'), (\bbv,\bbw)) \,, \quad \ord_{u=\infty} \overline{D}_{Q'\oplus
+    Q} = 0 \,. 
+\end{equation}
+\end{Proposition}
+
+\noindent
+Here $ \ord_{u=0}$ denotes the order of vanishing at $u=0$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
