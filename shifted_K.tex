@@ -216,6 +216,25 @@
 
 \newcommand{\question}{\marginpar{\quad \huge $\overset{\textup{?}}\leftarrow$}}
 
+\newenvironment{NB}{
+\color{red}{\bf NB}. \footnotesize
+}{}
+% The following is used inside NB
+\newenvironment{NB2}{
+\color{blue}{\bf NB2}. \footnotesize
+}{}
+%
+\newenvironment{NB3}{
+\color{purple}{\bf NB3}. \footnotesize
+}{}
+% For a final version, NB disappears.
+% \excludeversion{NB}
+% \excludeversion{NB2}
+% \excludeversion{NB3}
+\newcommand{\vin}[1]{{%\color{red}
+\operatorname{i}(#1)}} % incoming vertex
+\newcommand{\vout}[1]{{%\color{red}
+\operatorname{o}(#1)}} % outgoing vertex
 
 \begin{document}
 
@@ -663,8 +682,118 @@ selective about choosing the right stability condition. There is a
 beginning of the discussion in Section \ref{s_limit} below. 
 \question
 
+\subsubsection{}
+
+Let us show that the critical K-theories for finite $L$ with
+$\overline{W} = \C$ supported at a single vertex are KR modules.
+
+We specialize $\hbar$ generic, i.e., not a root of unity. The
+corresponding specialized module is
+$K_\crit(\tphi)\otimes_{R(\C^\times_\hbar)}\C$. It is isomorphic to
+the complex critical K-group of the fixed point
+$K_\crit(\tphi\big|_{\cM^{\C^\times_\hbar}})\otimes_\Z\C$. Connected
+components of $\cM^{\C^\times_\hbar}$ correspond to gradings on $V$ as
+for the usual quiver varieties. The direct sum decomposition into
+K-groups of components is the $\ell$-weight space decomposition of the
+module.
+
+In order to show that it is irreducible, we show that there are no
+$\ell$-dominant weight other than one corresponding to $V=0$. This
+property is called \emph{special} \cite[Def.~10.1]{MR2144973} and
+known to hold for KR modules \cite[Th.~3.2(1)]{MR1993360}. If it is
+special, it is irreducible as a submodule should contains an
+$\ell$-highest weight vector, which has an $\ell$-dominant weight. The
+converse is not true in general.
+%
+\begin{NB}
+The following is the original thought. It is kept as a record.
+  
+In turn, this should be true if we could see that $\Crit\tphi$ is
+compact. This statement is known for ordinary quiver varieties.
+\end{NB}%
+
+In order to match the convention with the literature, we adjust the
+$\C^\times_\hbar$-action so that $A$, $B$, $X$ are scaled by $\hbar$,
+$\Xi$, $\xi$ are scaled by $\hbar^{-2}$, and hence the action on
+$\C^L$ is $\diag(1,\hbar^{-2},\hbar^{-4}, \dots,\hbar^{2(1-L)})$.
+
+The Drinfeld polynomial is calculated from the $\ell$-highest weight,
+which corresponding to the component $V=0$. It should be clear, once
+everything is settled.
+
+Suppose that $\overline{W}$ is $\C$ supported at $i$. We take a fixed
+point $\cM^{\C^\times_{\hbar}}$ and consider the corresponding weight
+space decomposition $V = \bigoplus V_i(a)$, where $V_i(a)$ the weight
+subspace of $V_i$ with character $a$. Let us define the weight space
+$W_i(a)$ in the same way.
+%
+We have $W_i(1) = W_i(\hbar^{-2}) = \cdots = W_i(\hbar^{2(1-L)}) = \C$. On the
+fixed point, $\xi$, $\Xi$ shift weights by $\hbar^{-2}$, 
+%
+$X$, $A$, $B$ shift by $\hbar$.
+
+Assume $V_i(\hbar) = 0$. Then $A|_{W_i(1)} = 0$. The relation
+$\xi A = A\Xi$ implies $A|_{W_i(\hbar^{-2})} = 0$ since
+$\Xi\colon W_i(1)\to W_i(\hbar^{-2})$ is an isomorphism. Repeating the same
+argument, we find $A = 0$ by induction. The stability condition
+\begin{NB}
+  Here the stability is the cyclic one.
+\end{NB}%
+implies that $V=0$. Therefore $V_i(\hbar)\neq 0$ if the fixed point
+does \emph{not} correspond to the $\ell$-highest weight vector. Let us
+assuming $V\neq 0$ hereafter. Let $V_j(\hbar^m)$ be a weight space
+with the maximum power $m$. We have $m\ge 1$ by the above discussion.
+%
+Consider the following graded part of the complex
+\begin{NB}
+  I need to add a reference or explanation for the complex.
+\end{NB}%
+\begin{equation*}
+  \begin{matrix}
+    V_j(\hbar^m) &
+    \xrightarrow{\left[\begin{smallmatrix}B\\ X_h\end{smallmatrix}\right]}
+    & W_i(\hbar^{m+1}) \oplus \bigoplus_{h:\vout{h}=i} V_{\vin{h}}(\hbar^{m+1})
+    & \xrightarrow{\left[\begin{smallmatrix} A & \pm X_{\overline{h}}
+          \end{smallmatrix}\right]}
+    & V_i(\hbar^{m+2}).
+  \end{matrix}
+\end{equation*}
+By our choice of $m$ and the condition $m\ge 1$, the only nonzero term
+in the complex is $V_j(\hbar^m)$. Therefore the alternating sum of
+dimension
+\begin{NB}
+  where the middle is of degree $0$
+\end{NB}%
+is negative. Therefore the corresponding $\ell$-weight is \emph{not}
+$\ell$-dominant. This shows that our module is special, hence is
+irreducible.
 
 
+
+
+In order to relate this with \cite{}, we probably need a Riemann-Roch
+type theorem for critical theories, from K to homology.
+
+It is also interesting to see the $T$-system
+$$
+0 \to \bigotimes_{j:a_{ij}=-1} W^{(j)}_{k,aq}
+\to W^{(i)}_{k,a} \otimes W^{(i)}_{k,aq^2}
+\to W^{(i)}_{k+1,a}\otimes W^{(i)}_{k-1,aq^2}\to 0
+$$
+in \cite[Th.~1.1(1)]{MR1993360} in this context.
+
+\begin{NB}
+An old example, where the convention is not fixed yet.
+  
+In type $A_1$, we have $W = \C[x]/x^L$ and have $A, B\colon W\to V$
+are $\C[x]$-linear. Furthermore, if it corresponds to a fixed point,
+$V$ is equipped with a grading, and $A$ preserves the gradings, $B$
+decrease them by $1$. By the stability, $V = \C[x]/x^v$ and $v\le L$
+such that $A$ is the natural projection
+$\C[x]/x^L\twoheadrightarrow \C[x]/x^v$. Then $B$ sends $1$ to $0$,
+then $B\xi = \Xi B$ implies that $B=0$. Thus the fixed point sets are
+points, and compact.
+\end{NB}%
 
 
 
@@ -695,7 +824,7 @@ $$
 V' \subset \bigoplus_{i \in \textup{vertices} \cup \{\infty\}} V_i
 $$
 be a subspace invariant under the path algebra of the extended quiver
-and the operators $\xi$ and $\Xi$. I imagine th¡t a good condition to
+and the operators $\xi$ and $\Xi$. I imagine that a good condition to
 impose on it is that 
 $$
 (\theta, \theta_\infty) \cdot (\dim V', \dim V'_\infty) \ge 0 
@@ -792,6 +921,16 @@ and the corresponding Grothedieck groups, that is, critical
 $K$-theories.
 
 \subsection{}
+
+In the same way, we have the restriction with support homomorphism
+\begin{equation*}
+  \iota^* \colon K_{\crit,\bT}(\phi)\to K_{\crit,\bT}(\phi\big|_{\cM^\bA})
+\end{equation*}
+with respect to the inclusion $\iota\colon \cM^\bA\to \cM$ of the
+ambient smooth spaces. It becomes an isomorphism if we invert
+$\bA$-weights of the normal bundle for $\cM^\bA\subset\cM$.
+
+\subsection{}
 Let $X$ be a Nakajima quiver variety and consider tori  of the form 
 $$
 \bA= \{ (a_1, a_2, \dots)\}, \quad a_i \in \Ct \,,
@@ -835,7 +974,19 @@ $$
 And this enlarges the previously constructed category of
 modules by modules of the form $K_\crit\left( \tphi\right)$.
 By the perturbation argument, these are submodules in
-$K_\crit\left( \phi\right) \cong K(X)$
+$K_\crit\left( \phi\right) \cong K(X)$.
+
+In fact, we have a commutative diagram
+$$
+\begin{matrix}
+K_\crit\left(\tphi\big|_{\cM^\bA}\right) & \xrightarrow{\Stab} & 
+K_\crit\left(\tphi\right) \\
+ \downarrow & & \downarrow \\
+K_\crit\left(\phi\big|_{\cM^\bA}\right) & \xrightarrow[\Stab]{} & K_\crit\left(\phi\right),
+\end{matrix}
+$$
+hence the $R$-matrrix for $K_\crit\left(\phi\right)$ preserves
+$K_\crit\left(\tphi\right)$.
 
 \section{Large $L$ limit}\label{s_limit} 
 
@@ -1098,3 +1249,8 @@ Here $ \ord_{u=0}$ denotes the order of vanishing at $u=0$.
 
 \end{document}
 
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
