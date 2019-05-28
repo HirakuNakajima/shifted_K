@@ -1,0 +1,407 @@
+\section{}
+
+\subsection{Quiver description of the affine Grassmannian}
+
+\subsubsection{}
+
+Let $\cK:= \C((x))$, $\cO := \C[[x]]$.
+%
+Let $\oW$ be a finite dimensional complex vector space.
+
+Recall that the affine Grassmannian $\Gr_{G}$ for $G = \GL(\oW)$ is
+the space of lattices $\cL$ in $\oW_\cK = \oW\otimes_\C \cK$. Such a
+lattice $\cL$ is between $x^{L/2}\oW_\cO \subset x^{-L/2} \oW_\cO$ for
+sufficiently large $L$. We assign the following data to $\cL$:
+\begin{gather*}
+    V := x^{-L/2} \oW_\cO/\cL \ \text{(a finite dimensional vector space)}, \\
+    A \in \Hom(\oW, V);\ A(w) := w\otimes x^{-L/2} \mod \cL,\\
+    \xi \in \Hom(V,V);\ \xi := \text{the multiplication by $x$}.
+\end{gather*}
+From the construction $A$ is cyclic with respect to $\xi$, namely a
+subspace of $V$ containing $\Image A$ and stable under $\xi$ must be
+the whole $V$.
+
+Conversely we can recover $\cL$ from $V$, $A$, $\xi$ as
+\begin{equation*}
+  \cL := \left\{ w\otimes x^{-L/2} f\in x^{-L/2} \oW_\cO
+  \middle| f(\xi) A(w) = 0 \right\}.
+\end{equation*}
+
+For example, the identity element in $\Gr_G$, which is
+$\cL = \oW_\cO$, corresponds to
+\begin{gather*}
+  V = x^{-L/2}\oW_\cO/\oW_\cO, \quad
+  A(w) = w\otimes x^{-L/2} \mod \oW_\cO, \\
+  \xi = \text{the multiplication by $x$}.
+\end{gather*}
+
+This gives us a finite dimensional approximation of the affine
+Grassmannian by the GIT quotient
+\begin{equation*}
+  \cQ(V,\oW) \equiv \cQ :=
+   \Hom(\oW,V) \oplus \gl(V)^{\mathrm{nilp}} \rd_{\!\mathrm{cyc}} \GL(V),
+\end{equation*}
+where `nilp' means that nilpotent endomorphisms, `cyc' means the
+cyclicity condition above, and is given by the character
+$\det\colon \GL(V)\to \C^\times$.
+ 
+Lusztig identified the nilpotent cone for $\gl(\oW)$ with a locally
+closed subset of $\Gr_{G}$ \cite{Lu-Green}. It is the open
+subvariety of $\cQ$ for $\dim V= \dim \oW$ consisting of invertible
+$A$'s. Then we normalize $A$ to $\Id$ to kill the action of
+$\GL(V)$. Therefore the open subset is indeed the nilpotent cone.
+
+The notation for $\cQ(V,\oW)$ follows the usual convention: a vector
+space whose $\GL$-quotient appears is denoted by $V$, and another
+(framed) vector space by $\oW$. However we use the affine Grassmannian
+for $\Gr_{\GL(V)}$ for a quiver gauge theory associated with $V$, $\oW$
+in the context of Coulomb branches. Therefore we need to change the
+notation for Coulomb branches afterwards, namely $\oW$ here is the usual
+$V$.
+
+\begin{NB}
+I am not sure the following is necessary:
+  
+We can alternatively consider
+\begin{gather*}
+  V' := \cL / x^{L/2} \oW_\cO\ \text{(a finite dimensional vector space)}, \\
+  B \in \Hom(V', \oW);\ B(v) := \frac1{2\pi i}\oint v x^{-L/2} dx,\\
+    \xi \in \Hom(V',V');\ \xi := \text{the multiplication by $x$},
+\end{gather*}
+where the contour is a small circle around $x=0$ in the anti-clockwise
+direction. Then $(B,\xi)$ is cocyclic, i.e.\ a subspace in $V'$
+invariant under $\xi$ and sent to $0$ by $B$ must be $0$.
+
+Let us consider the perpendicular $\cL^\perp$ of $\cL$ in
+$\oW^*_\cK$. Then $\cL^\perp\subset x^{-N} \oW^*[[x]]$ and the
+previous construction gives
+$V^{\prime*} = x^{-N} \oW^*[[x]]/\cL^\perp$ and
+$B^*\in\Hom(\oW^*,V^{\prime*})$,
+$\xi\in\Hom(V^{\prime*},V^{\prime*}) = \Hom(V',V')$. Taking
+transposes, we get the above description.
+\end{NB}%
+
+\subsubsection{}\label{subsubsec:alt}
+
+We introduce $W = \oW\otimes_\C x^{-L/2} \C[x]/x^{L/2}\C[x]
+= \oW\otimes_\C x^{-L/2} \cO/x^{L/2} \cO$,
+and $\Xi\in\End(W)$ as the multiplication by $x$ as in
+\cref{sJets}. Then $A$ extends uniquely to $W$ so
+that $A \Xi = \xi A$. It becomes surjective.
+
+\subsubsection{}\label{subsubsec:ind}
+
+If $\cL$ is contained in $x^{-L/2} \oW_\cO$, it is also contained in
+$x^{-(L+2)/2} \oW_\cO$. If $\cL$ gives $(V,A,\xi)$ for $x^{-L/2} \oW_\cO$, the
+quiver data for $x^{-(L+2)/2} \oW_\cO$ is $(V',A',\xi')$ with
+\begin{equation*}
+   V' := V\oplus \oW, \quad A' := %\left[
+     \begin{bmatrix}
+        0 \\ \Id_{\oW}
+     \end{bmatrix}, \quad
+     \xi' :=
+     \begin{bmatrix}
+       \xi & A \\
+       0 & 0
+     \end{bmatrix}.
+\end{equation*}
+We thus have the inductive system
+\begin{equation*}
+  \cQ(V,\oW) \subset \cQ(V\oplus \oW, \oW) \subset
+  \cQ(V\oplus \oW^{\oplus 2}, \oW) \subset \cdots.
+\end{equation*}
+
+In the description in \cref{subsubsec:alt} we increase
+$W = \oW\otimes_\C x^{-L/2}\C[x]/x^{L/2}\C[x]$ as $L\to \infty$. We
+then simultaneously increase $V$ as $V$, $V\oplus \oW$,
+$V\oplus\oW^{\oplus 2}, \cdots$. Thus $\dim V = L \dim \oW/2 + O(1)$.
+
+\subsubsection{}
+
+We have an action of $G_\cO$ on $\Gr_{G}$ induced from its
+action on $\oW_\cK$. It is given by
+\begin{equation*}
+  A \mapsto A g(\Xi)^{-1} = A g_0 + \xi A g_1 + \xi^2 A g_2 + \cdots, \qquad
+  \xi \mapsto \xi,
+\end{equation*}
+where $g(x) = (g_0 + g_1x + g_2 x^2 + \cdots)^{-1} \in G_\cO$. In the
+first expression $A g(\Xi)^{-1}$, we regard $A$ as $\Hom(W,V)$. We
+then use $A\Xi = \xi A$ to change it to the second expression which
+makes sense for $A\in\Hom(\oW,V)$.
+%
+Note that it descends to an action of a finite
+dimensional quotient $G(\cO/x^{\dim V}\cO)$.
+
+This action is compatible with the inductive system in
+\cref{subsubsec:ind} as
+\begin{equation*}
+  \begin{split}
+    & A' g_0 + \xi' A' g_1 + (\xi')^2 A' g_2 + \cdots
+    = \tilde g
+    % \begin{bmatrix}
+    %   \Id_V & A g_1 + \xi A g_2 + \cdots \\
+    %   0 & g_0
+    % \end{bmatrix}
+    \begin{bmatrix}
+      0 \\ \Id_{\oW}
+    \end{bmatrix},\\
+    &
+    \begin{bmatrix}
+      \xi & A \\
+      0 & 0
+    \end{bmatrix}
+    = \tilde g
+    % \begin{bmatrix}
+    %   \Id_V & A g_1 + \xi A g_2 + \cdots \\
+    %   0 & g_0
+    % \end{bmatrix}
+    \begin{bmatrix}
+      \xi & A g_0 + \xi A g_1 + \xi^2 A g_2 + \cdots \\
+      0 & 0
+    \end{bmatrix}
+    \tilde g^{-1},
+    % \begin{bmatrix}
+    %   \Id_V & A g_1 + \xi A g_2 + \cdots \\
+    %   0 & g_0
+    % \end{bmatrix}^{-1}.
+    \\
+    & \quad\text{where }\tilde g =
+    \begin{bmatrix}
+      \Id_V & A g_1 + \xi A g_2 + \cdots \\
+      0 & g_0
+    \end{bmatrix}.
+  \end{split}
+\end{equation*}
+
+The loop rotation $\C^\times_{\mathrm{loop}}$ acts on $\cO$, $\cK$ by
+$x\mapsto tx$ ($t\in\C^\times_{\mathrm{loop}}$). It induces an action
+on $\Gr_{G}$, and is given by
+\begin{equation*}
+  A \mapsto A, \qquad \xi \mapsto t\xi
+\end{equation*}
+in the quiver description. This action is also compatible with the
+inductive system in \cref{subsubsec:ind} as
+\begin{equation*}
+  \begin{bmatrix}
+    0 \\ \Id_\oW
+  \end{bmatrix} =
+    \begin{bmatrix}
+    t & 0\\
+    0 & 1
+  \end{bmatrix}
+  \begin{bmatrix}
+    0 \\ \Id_\oW
+  \end{bmatrix}, \quad
+  t \begin{bmatrix}
+    \xi & A \\
+    0 & 0
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    t & 0\\
+    0 & 1
+  \end{bmatrix}
+  \begin{bmatrix}
+    t\xi & A \\
+    0 & 0
+  \end{bmatrix}
+  \begin{bmatrix}
+    t & 0\\
+    0 & 1
+  \end{bmatrix}^{-1}.
+\end{equation*}
+
+\subsubsection{}
+
+Let us take a base of $\oW$ and consider the torus $T(\oW)\subset G$
+consisting of diagonal matrices. It acts on $\Gr_{G}$ as a
+subgroup of $G_\cO$. If $[A, \xi]$ is a fixed point, we have a
+decomposition $V = V_1\oplus \cdots \oplus V_w$ ($w=\dim \oW$) which is
+preserved by $\xi$. And $\prod_{i=1}^w [A_i,\xi_i]$ can be regarded as
+a point in $\prod_{i=1}^w \cQ(V_i,\C)$, the quiver description of
+$\Gr_{T(\oW)}$. Each $[A_i,\xi_i]$ is determined uniquely by $\dim V_i$,
+and corresponds to the point $x^{\dim V_i - N}\cO \subset \cO$ in the
+affine Grassmannian for $\C^\times$. Thus $\prod_{i=1}^w [A_i,\xi_i]$
+is identified with the cocharacter $(\dim V_1-N,\cdots,\dim V_w-N)$ of
+$G$.
+
+\begin{NB}
+By the localization in equivariant Borel-Moore homology groups, we
+have
+\begin{equation*}
+  H^{T(\oW)}_*(\cQ)\otimes_{H^*_{T(\oW)}(\mathrm{pt})}
+  \mathrm{Frac}(H^*_{T(\oW)}(\mathrm{pt}))
+  \cong H_*(\cQ^{T(\oW)})\otimes_\C
+  % \bigoplus_{\sum \dim V_i = \dim V}
+  \mathrm{Frac}(H^*_{T(\oW)}(\mathrm{pt})).
+\end{equation*}
+\end{NB}%
+
+\subsubsection{}\label{subsubsec:convolution}
+
+Recall the convolution diagram appeared in the geometric Satake
+correspondence (see e.g.\ \cite{MV2}):
+\begin{equation*}
+  \Gr_{G} \times \Gr_{G} \xleftarrow{p}
+  G_\cK \times \Gr_{G} \xrightarrow{q}
+  G_\cK \times_{G_\cO} \Gr_{G} \xrightarrow{m}
+  \Gr_{G}.
+\end{equation*}
+In terms of lattices, the second space $G_\cK \times \Gr_{G}$
+parametrizes $(\cL_1,\kappa,\cL_2)$ where $\cL_1$, $\cL_2$ are
+lattices in $\oW_\cK$, and $\kappa$ is an isomorphism
+$\cL_1\cong \oW_\cO$. The third space $G_\cK \times_{G_\cO} \Gr_{G}$
+parametrizes $(\cL_1,\cL_3,\eta)$ where $\cL_1$ is a lattice in
+$\oW_\cK$, $\cL_3$ is an abstract projective $\cO$-module of rank
+$=\dim \oW$, and $\eta$ is an isomorphism
+$\cL_1\otimes_\cO\cK\cong \cL_3\otimes_\cO\cK$.
+%
+The map $p$ forgets $\kappa$. The map $q$ is given by setting
+$\cL_3 = \cL_2$, $\eta$ as the composition of $\kappa$ and the inverse
+of the inclusion $\cL_3\subset \oW_\cK$. For the map $m$, we first
+define the embedding $\cL_3\subset \oW_\cK$ as the composite of
+$\eta^{-1}$ and $\cL_1\otimes_\cO\cK\xrightarrow{\cong} \oW_\cK$. Then
+we consider $\cL_3$ as a lattice in $\oW_\cK$.
+
+Let us give a quiver description of the convolution diagram. We take
+finite dimensional vector spaces $V_1$, $V_2$ to describe
+$\Gr_G\times \Gr_G$. We also take a vector space $V_3$ with
+$\dim V_3 = \dim V_1+\dim V_2$. It is for the rightmost $\Gr_G$.
+
+We consider the space
+\begin{equation*}
+  \{ (V_3,A_3,\xi_3,\varphi\colon V_3\twoheadrightarrow V_1) \}/\!\cong,
+\end{equation*}
+where $V_3,A_3,\xi_3$ are as above, and $\varphi$ is a surjective
+$\cO$-module homomorphism, i.e.\ a surjective linear map whose kernel
+is invariant under $\xi_3$. We claim that this space is a finite
+dimensional approximation of $G_\cK\times_{G_\cO}\Gr_G$ such that $m$
+is given by forgetting $\varphi$.
+%
+In fact, we first define $\cL_3\subset x^{-L}\oW_\cO$ from
+$(V_3,A_3,\xi_3)$ as above. We then define $A_1$ as the composite of
+$A_3$ and the projection, $\xi_1$ as the multiplication by $x$. They
+form data for $\cQ(V_1,\oW)$, hence we have the corresponding lattice
+$\cL_1\subset x^{-L/2} \oW_\cO$. The surjection
+$\varphi\colon V_3\twoheadrightarrow V_1$ gives an inclusion
+$\cL_3\subset x^{-L/2} \cL_1$ as
+$x^{-L}\oW_\cO/\cL_3 = V_3 \twoheadrightarrow V_1 = x^{-L/2} \oW_\cO/\cL_1
+= x^{-L} \oW_\cO/ x^{-L/2} \cL_1$.
+%
+We choose an isomorphism $\kappa\colon \cL_1\xrightarrow{\cong} \oW_\cO$
+in the second space $G_\cK\times\Gr_G$. Then we have an inclusion
+$\cL_3\subset x^{-L/2}\cL_1\xrightarrow{\kappa} x^{-L/2} \oW_\cO$. Hence it
+defines data
+$V_2 = \Ker\varphi = x^{-L/2}\cL_1/\cL_3 \xrightarrow[\cong]{\kappa}
+x^{-L/2} \oW_\cO/\kappa(\cL_3)$ and $A_2$, $\xi_2$ as before. This defines the
+map $p$.
+
+\subsubsection{}
+
+We consider $K_{G_\cO\rtimes\C^\times_{\text{loop}}}(\Gr_G)$ and
+define the convolution product by
+\begin{equation*}
+  c_1\ast c_2 = m_* (q^*)^{-1} p^* (c_1\otimes c_2) \quad
+  \text{for $c_1$, $c_2\in K_{G_\cO\rtimes\C^\times_{\text{loop}}}(\Gr_G)$}.
+\end{equation*}
+Here $q$ is a $G_\cO$-bundle, hence $q^*$ is an isomorphism
+\begin{equation*}
+  K_{G_{\cO}\rtimes\C^\times_{\text{loop}}}(G_\cK\times_{G_\cO}\Gr_G)
+    \xrightarrow[\cong]{q^*}
+    K_{(G_{\cO}\times G_\cO)\rtimes\C^\times_{\text{loop}}}
+    (G_\cK\times\Gr_G).
+\end{equation*}
+This is the quantized Coulomb branch associated with the group
+$G = \GL(\oW)$ together with $0$ representation
+\cite{2016arXiv160103586B}. In fact, this example was studied earlier
+in \cite{MR2135527}.
+
+\subsubsection{}
+
+We embed $\cQ$ into a larger space
+\begin{equation*}
+  \cM := \Hom(W,V) \oplus \Hom(V,W)\oplus
+  \gl(V) \rd_{\!\mathrm{cyc}} \GL(V),
+\end{equation*}
+where we denote the second component by $B$. Here
+$W = \oW\otimes_\C \C[x]/x^{L}$, and $\Xi$ is the multiplication of
+$x$ as before. This is an example of spaces considered in
+\cref{Asr}. We define a function $\tphi$ as
+$\tr(AB \xi) - \tr(A\Xi B)$ as before.
+%
+We let $G_\cO$ act on $B$ by $g(\Xi) B$ for $g(x)\in G_\cO$. Then
+$\tphi$ is invariant under $G_\cO$. Hence we can consider
+$G_\cO$-equivariant critical K-theory. Since $\tphi$ is linear in $B$, we
+can reduce the critical K-theory to the ordinary K-theory on the variety
+$0 = \partial\tphi/\partial B = \xi A - A\Xi$. In particular, we have
+$\xi^L A = 0$, and hence $\xi^L = 0$ as $A$ is surjective. Thus we have
+\begin{equation*}
+  K_{\crit,?}(\tphi) = K_{?}(\cQ).
+\end{equation*}
+
+Alternatively we may consider
+\begin{equation*}
+  \bar{\cM} := \Hom(\oW,V) \oplus \Hom(V,\oW)\oplus
+  \gl(V) \rd_{\!\mathrm{cyc}} \GL(V).
+\end{equation*}
+We consider a slightly modified function $\phi = \tr(A B \xi^d)$ for a
+positive integer $d$. In fact, this is the function which was used by
+Bykov, Zinn-Justin \cite{2019arXiv190411107B}.
+
+We let $G_\cO$ act on $B$ by
+\begin{equation*}
+  B\mapsto g'_0 B + g'_1 B\xi + g'_2 B\xi^2 + \cdots
+\end{equation*}
+where $g(x) = g'_0 + g_1' x + g'_2 + \cdots$. Then
+$\tr(A B \xi^d)$ is invariant under $G_\cO$.
+\begin{NB}
+  If we extend $B$ to $\Hom(V,W)$, it is clear. Otherwise we check it
+  directly as
+\begin{equation*}
+  \begin{split}
+    &
+    \tr(A B \xi^d) \mapsto \\
+    & \quad
+    \begin{aligned}[t]
+      & \tr\bigl( A g_0 g'_0 B \xi^d + \xi A g_1 g'_0 B \xi^d + A g_0
+      g'_1 B \xi^{d+1}\\
+      & \qquad
+      + \xi^2 A g_2 g'_0 B\xi^d + \xi A g_1 g'_1 B\xi^{d+1}
+      + A g_0 g'_2 B\xi^{d+2} + \cdots \bigr) = \tr(A B \xi^d)
+    \end{aligned}
+  \end{split}
+\end{equation*}
+as
+$g(x)^{-1} g(x) = g_0 g'_0 + (g_1 g'_0 + g_0 g'_1) x + (g_2 g'_0 + g_1
+g'_1 + g_0 g'_2)x^2 + \cdots = 1$. Thus $\phi$ is invariant under
+$G_\cO$.
+\end{NB}%
+Hence we can consider the $G_\cO$-equivariant critical K-theory. We
+have
+\begin{equation*}
+  K_{\crit,?}(\phi) = K_{?}(\widetilde\cQ),
+\end{equation*}
+where $\widetilde \cQ$ is the space defined by $\xi^d A = 0$ instead
+of imposing that $\xi$ is nilpotent. But the cyclicity implies that
+$\xi^d = 0$. Hence $\widetilde\cQ\subset \cQ$ and we have an equality
+if we take $d \ge \dim V$.
+
+\subsubsection{}
+
+By \cref{subsec:Vgrow} we have an action of a shited quantum affine
+algebra of type $\mathfrak{sl}(2)$ on $\bigoplus
+K_{\crit,?}(\tphi)$. On the other hand, we have a surjective
+homomorphism from a shifted quantum affine algebra to
+$\lim_{L\to\infty} K_{G_\cO\rtimes\C^\times_{\text{loop}}}(\cQ)$ by
+\cite{2016arXiv160403625B}. It should be the same, i.e.\ the first
+action is given by the multiplication (left or right ?) through the
+second homomorphism. Can we prove it ? \question
+
+\subsection{Quiver description of the variety of triples}
+
+To be written.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "shifted_K"
+%%% End:

@@ -9,13 +9,17 @@
 %\usepackage{mathrsfs,pifont}
 %\usepackage{slashed,mathabx} 
 
-
 \usepackage[all]{xy}
 
 \usepackage{tikz}
 \usetikzlibrary{matrix,arrows}
 \usepackage{hyperref}
 \usepackage[backrefs,msc-links]{amsrefs}
+
+\usepackage{cleveref}
+\crefname{section}{\S}{\S\S}
+\crefformat{section}{\S#2#1#3} % to remove unnecessary space
+\crefmultiformat{section}{\S\S#2#1#3}{, #2#1#3}{, #2#1#3}{, #2#1#3}
 
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\bbA}{\mathbb{A}}
@@ -235,6 +239,10 @@
 \operatorname{i}(#1)}} % incoming vertex
 \newcommand{\vout}[1]{{%\color{red}
 \operatorname{o}(#1)}} % outgoing vertex
+\DeclareMathOperator{\GL}{GL}
+\newcommand{\gl}{\mathfrak{gl}}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\oW}{{\overline{W}}}
 
 \begin{document}
 
@@ -487,7 +495,7 @@ be the sum of corresponding terms in \eqref{tW}.
 
 \section{Examples of critical loci}
 
-\subsection{Algebraic symplectic reductions}
+\subsection{Algebraic symplectic reductions}\label{Asr}
 
 \subsubsection{}\label{s_Mg}
 
@@ -1052,7 +1060,7 @@ get the total space of a tautological bundle over $\Hilb(\C^3)$, where
 $\xi$ acts as the multiplication by the new coordinate.
 
 
-\subsection{When $V$ grows with $L$: singularities in the $R$-matrix}
+\subsection{When $V$ grows with $L$: singularities in the $R$-matrix}\label{subsec:Vgrow}
 
 \subsubsection{}
 
@@ -1245,8 +1253,9 @@ Here $ \ord_{u=0}$ denotes the order of vanishing at $u=0$.
 
 
 
+\input{quiver}
 
-
+\bibliography{shifted_K,nakajima,mybib}
 \end{document}
 
 
