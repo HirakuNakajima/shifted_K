@@ -44,6 +44,9 @@ Grassmannian by the GIT quotient
 where `nilp' means that nilpotent endomorphisms, `cyc' means the
 cyclicity condition above, and is given by the character
 $\det\colon \GL(V)\to \C^\times$.
+\begin{NB}
+  We have $\dim \cQ = (\dim \oW - 1)\dim V$.
+\end{NB}%
  
 Lusztig identified the nilpotent cone for $\gl(\oW)$ with a locally
 closed subset of $\Gr_{G}$ \cite{Lu-Green}. It is the open
@@ -87,7 +90,44 @@ We introduce $W = \oW\otimes_\C x^{-L/2} \C[x]/x^{L/2}\C[x]
 = \oW\otimes_\C x^{-L/2} \cO/x^{L/2} \cO$,
 and $\Xi\in\End(W)$ as the multiplication by $x$ as in
 \cref{sJets}. Then $A$ extends uniquely to $W$ so
-that $A \Xi = \xi A$. It becomes surjective.
+that $A \Xi = \xi A$. It becomes surjective. Therefore
+\begin{equation*}
+  \cQ \cong \left\{ (A,\xi)\in\Hom(W,V)\oplus\gl(V) \middle|
+  A\Xi = \xi A\right\}\rd_{\!\mathrm{surj}} \GL(V),
+\end{equation*}
+where `surj' means that $A$ is surjective. The nilpotency of $\xi$ is
+automatically satisfied as $\xi^n A = A\xi^n = 0$ for $n\ge \dim W$.
+
+\subsubsection{}
+
+The positive affine Grassmannian $\Gr_G^+$ consists of $\cL$ such that
+$\cL\subset \oW_\cO$. Its finite dimensional approximation can be
+defined as
+\begin{equation*}
+  \cQ^+ := \left\{ (A^+,\xi^+)\in\Hom (W^+, V^+)\otimes\gl(V^+)
+    \middle| A^+\Xi = \xi^+ A^+\right\}\rd_{\!\mathrm{surj}} \GL(V^+),
+\end{equation*}
+where $W^+ = \oW_\cO/x^{L/2} \oW_\cO$, $V^+ = \oW_\cO/\cL$,
+$A^+(w) = w\otimes 1 \mod \cL$, and $\xi$, $\Xi$ are multiplication by
+$x$.
+
+The embedding $\cQ^+\subset\cQ$ is given as follows: let
+$W^- = x^{-L/2} \oW_\cO /\oW_\cO$. We have $\xi^-\in\gl(V^-)$ by the
+multplication of $x$, and $\xi'\colon W^-\to W^+$ by
+$w\otimes x^{-1} \to w\otimes 1 \mod \oW_\cO$, $w\otimes x^{-n}\to 0$
+for $n\neq -1$. Then we set
+\begin{equation*}
+   V = W^-\oplus V^+,\ W = W^-\oplus W^+,\ A =
+   \begin{bmatrix}
+     \Id_{W^-} & A^+
+   \end{bmatrix},\ 
+   \xi =
+   \begin{bmatrix}
+     \xi^- & 0 \\
+     A^+\xi'  & \xi^+
+   \end{bmatrix}.
+\end{equation*}
+
 
 \subsubsection{}\label{subsubsec:ind}
 
@@ -220,9 +260,9 @@ decomposition $V = V_1\oplus \cdots \oplus V_w$ ($w=\dim \oW$) which is
 preserved by $\xi$. And $\prod_{i=1}^w [A_i,\xi_i]$ can be regarded as
 a point in $\prod_{i=1}^w \cQ(V_i,\C)$, the quiver description of
 $\Gr_{T(\oW)}$. Each $[A_i,\xi_i]$ is determined uniquely by $\dim V_i$,
-and corresponds to the point $x^{\dim V_i - N}\cO \subset \cO$ in the
+and corresponds to the point $x^{\dim V_i - L/2}\cO \subset \cO$ in the
 affine Grassmannian for $\C^\times$. Thus $\prod_{i=1}^w [A_i,\xi_i]$
-is identified with the cocharacter $(\dim V_1-N,\cdots,\dim V_w-N)$ of
+is identified with the cocharacter $(\dim V_1-L/2,\cdots,\dim V_w-L/2)$ of
 $G$.
 
 \begin{NB}
@@ -250,18 +290,20 @@ correspondence (see e.g.\ \cite{MV2}):
 In terms of lattices, the second space $G_\cK \times \Gr_{G}$
 parametrizes $(\cL_1,\kappa,\cL_2)$ where $\cL_1$, $\cL_2$ are
 lattices in $\oW_\cK$, and $\kappa$ is an isomorphism
-$\cL_1\cong \oW_\cO$. The third space $G_\cK \times_{G_\cO} \Gr_{G}$
+$\cL_1\xrightarrow{\cong} \oW_\cO$. The third space $G_\cK \times_{G_\cO} \Gr_{G}$
 parametrizes $(\cL_1,\cL_3,\eta)$ where $\cL_1$ is a lattice in
 $\oW_\cK$, $\cL_3$ is an abstract projective $\cO$-module of rank
 $=\dim \oW$, and $\eta$ is an isomorphism
 $\cL_1\otimes_\cO\cK\cong \cL_3\otimes_\cO\cK$.
 %
 The map $p$ forgets $\kappa$. The map $q$ is given by setting
-$\cL_3 = \cL_2$, $\eta$ as the composition of $\kappa$ and the inverse
-of the inclusion $\cL_3\subset \oW_\cK$. For the map $m$, we first
-define the embedding $\cL_3\subset \oW_\cK$ as the composite of
-$\eta^{-1}$ and $\cL_1\otimes_\cO\cK\xrightarrow{\cong} \oW_\cK$. Then
-we consider $\cL_3$ as a lattice in $\oW_\cK$.
+$\cL_3 = \kappa^{-1}(\cL_2)$, $\eta$ is induced from the natural inclusion
+$\cL_3\subset \cL_1\otimes_\cO \cK$.
+%
+For the map $m$, we first define the embedding $\cL_3\subset \oW_\cK$
+as the composite of $\eta^{-1}$ and
+$\cL_1\otimes_\cO\cK\xrightarrow{\cong} \oW_\cK$. Then we consider
+$\cL_3$ as a lattice in $\oW_\cK$.
 
 Let us give a quiver description of the convolution diagram. We take
 finite dimensional vector spaces $V_1$, $V_2$ to describe
@@ -338,6 +380,10 @@ $\xi^L A = 0$, and hence $\xi^L = 0$ as $A$ is surjective. Thus we have
 \begin{equation*}
   K_{\crit,?}(\tphi) = K_{?}(\cQ).
 \end{equation*}
+I have used this isomorphism when $\cQ$ is not smooth. Is it OK ? The
+section $\xi A - A\Xi\in\Gamma(\Hom(W,V))$ is \emph{not} regular, as
+$\dim(\text{zero set}) = \dim \cQ = (\dim \oW-1)\dim V > 0$ unless
+$\dim\oW = 1$. \question
 
 Alternatively we may consider
 \begin{equation*}
